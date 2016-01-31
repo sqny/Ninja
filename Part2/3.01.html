@@ -20,8 +20,9 @@
         assert(typeof inner === 'function', "inner() in scope before declaration");
         assert(typeof innerVariable === 'function', "innerVariable() in scope before declaration");
 
-        function inner(){}
-
+        function inner(){
+            assert(this===window, "in inner() this===window");}
+        inner();
         var innerVariable = function () {return true;};
         assert(typeof innerVariable === 'function', "innerVariable() in scope after declaration");
         assert(typeof inner === 'function', "inner() in scope after declaration");

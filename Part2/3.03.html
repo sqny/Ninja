@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This in methods vs pure function invocations</title>
+    <script src="..\assert.js"></script>
+    <script>
+        assert(creep() === window, "Creeping in the window");
+        var sneak = creep;
+
+        assert(sneak() === window, "Sneaking in the window");
+
+        var ninja1 = {
+            skulk: creep
+        };
+
+        assert(ninja1.skulk()===ninja1, "The 1st ninja is skulking");
+
+        var ninja2 = {
+            skulk: creep
+        };
+
+        assert(ninja2.skulk()===ninja2, "The 2nd ninja is skulking");
+
+
+        function creep(){ return this;}
+    </script>
+</head>
+<body>
+
+</body>
+</html>
