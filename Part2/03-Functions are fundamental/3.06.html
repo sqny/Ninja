@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call and Apply in forEach</title>
+    <script src="..\assert.js"></script>
+    <script>
+        function forEach(dict, callback) {
+            for (var n = 0; n < dict.length; n++) {
+                callback.call(dict[n], n);
+            }
+        }
+        var weapons = ['shuriken', 'katana', 'nunchucks'];
+        forEach(
+                weapons,
+                function (index) {
+                    assert(weapons[index] == this, "Got the expected value of " + weapons[index]);
+                }
+        );
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
