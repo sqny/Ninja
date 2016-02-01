@@ -11,7 +11,7 @@
                 document.body.appendChild(result);
             }
             result.style.background = '#FFFFA0';
-            result.style.border = "thick solid red";
+            result.style.border = "thick solid #8b0000";
 
             li = document.createElement("li");
             li.textContent = description;
