@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline functions</title>
+</head>
+<script src="../../assert.js"></script>
+<script>
+    var ninja = function myNinja() {
+        assert(ninja==myNinja, "This function is named 2 things at once!");
+    };
+
+    ninja();
+    assert(typeof myNinja == 'undefined', "But myNinja isn't defined outside of the function");
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Recursion</title>
+</head>
+<script src="../../assert.js"></script>
+<script>
+    function chirp(n){
+        return n>1 ? chirp(n-1)+"-chirp":"chirp";
+    }
+
+    assert(chirp(3) == "chirp-chirp-chirp", "Calling the named function comes naturally");
+</script>
+<body>
+
+</body>
+</html>

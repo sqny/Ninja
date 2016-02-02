@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion with inline function</title>
+    <script src="../../assert.js"></script>
+    <script>
+        var ninja = {
+            chirp: function signal(n){
+                return n > 1 ? signal(n-1) + '-chirp':'chirp';
+            }
+        };
+        assert(ninja.chirp(2) == 'chirp-chirp', "Works as we would expect it to!");
+        var samurai = {chirp:ninja.chirp};
+        ninja={};
+
+        assert(samurai.chirp(3) == 'chirp-chirp-chirp', "The method correctly calls itself");
+    </script>
+</head>
+<body>
+
+</body>
+</html>
