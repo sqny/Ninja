@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slicing arguments Bad</title>
+</head>
+<script src="../../assert.js"></script>
+<script>
+    function multiMax(multi){
+        return multi * Math.max.apply(arguments.slice(1));
+    }
+    assert(multiMax(3, 1, 2, 3), "3*3=9 (first arg, by largest).");
+</script>
+<body>
+
+</body>
+</html>

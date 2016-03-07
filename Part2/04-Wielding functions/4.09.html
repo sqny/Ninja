@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memoizing primes</title>
+</head>
+<script src="../../assert.js"></script>
+<script>
+    function isPrime(value){
+        if(!isPrime.answers) isPrime.answers = {};
+        if(isPrime.answers[value] != null){
+            return isPrime.answers[value];
+        }
+        var prime = value!=1;
+        for(var i=2; i< value;i++){
+            if (value % i == 0){
+                prime = false;
+                break;
+            }
+        }
+        return isPrime.answers[value] = prime;
+    }
+
+    var i = 5915587277;
+    assert(isPrime(i), i+" is prime!");
+    assert(isPrime.answers[i], "The answer was cached!");
+</script>
+<body>
+
+</body>
+</html>
